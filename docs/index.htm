@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<head>
+<title>Index of AllegroFlare Components • AllegroFlare Game Programming Docs</title>
+<style>
+*
+{
+  font-family: 'Arial';
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+#primary_logo
+{
+  width: 80px;
+  float: left;
+}
+#logo_text
+{
+  padding-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+#main_nav ul
+{
+  list-style: none;
+}
+#main_nav ul li
+{
+  display: inline-block;
+  padding: 10px;
+}
+#main_nav ul li a
+{
+  color: white;
+}
+
+#components_index_list ul
+{
+  padding: 20px;
+  margin-bottom: 10px;
+}
+html
+{
+}
+h1, h2, h3, h4, h5, p
+{
+  margin-bottom: 20px;
+}
+table td
+{
+  padding: 3px 20px;
+}
+.property
+{
+  color: blue;
+}
+.private_property
+{
+  color: lightblue;
+}
+.method
+{
+  color: red;
+}
+.private_method
+{
+  color: pink;
+}
+.dependency
+{
+  color: green;
+}
+
+.component div.property-box
+{
+  padding: 20px 10px 20px 10px;
+  margin: 20px 10px 20px 10px;
+  border-radius: 8px;
+}
+
+.component .properties
+{
+  background-color: #dfcfdf;
+}
+
+.component .methods
+{
+  background-color: #cfdfdf;
+}
+
+.component .dependencies
+{
+  background-color: #dfdfcf;
+}
+
+
+
+.header
+{
+  background: rgb(204,28,28);
+  background: -moz-linear-gradient(175deg, rgba(204,28,28,1) 0%, rgba(176,28,105,1) 100%);
+  background: -webkit-linear-gradient(175deg, rgba(204,28,28,1) 0%, rgba(176,28,105,1) 100%);
+  background: linear-gradient(175deg, rgba(204,28,28,1) 0%, rgba(176,28,105,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cc1c1c",endColorstr="#b01c69",GradientType=1);
+
+  color: white;
+}
+.footer
+{
+background: rgb(0,0,0);
+background: -moz-linear-gradient(172deg, rgba(0,0,0,1) 0%, rgba(122,20,97,1) 100%);
+background: -webkit-linear-gradient(172deg, rgba(0,0,0,1) 0%, rgba(122,20,97,1) 100%);
+background: linear-gradient(172deg, rgba(0,0,0,1) 0%, rgba(122,20,97,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#7a1461",GradientType=1);
+
+  height: 200px;
+  color: white;
+  font-weight: bold;
+}
+.footer a
+{
+  color: white;
+}
+
+
+
+
+
+
+/* grid container */
+.holy-grail-grid {
+    display:grid;
+    grid-template-areas:
+        'header'
+        'main-content'
+        'left-sidebar'
+        'right-sidebar'
+        'footer';
+}
+
+/* general column padding */
+.holy-grail-grid > * {
+    padding:1rem;
+}
+
+/* assign columns to grid areas */
+.holy-grail-grid > .header {
+    grid-area:header;
+}
+.holy-grail-grid > .main-content {
+    grid-area:main-content;
+}
+.holy-grail-grid > .left-sidebar {
+    grid-area:left-sidebar;
+}
+.holy-grail-grid > .right-sidebar {
+    grid-area:right-sidebar;
+}
+.holy-grail-grid > .footer {
+    grid-area:footer;
+}
+
+/* tablet breakpoint */
+@media (min-width:768px) {
+    .holy-grail-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            'header header'
+            'main-content main-content'
+            'left-sidebar right-sidebar'
+            'footer footer';
+    }
+}
+
+/* desktop breakpoint */
+@media (min-width:1024px) {
+    .holy-grail-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            'header header header header'
+            'left-sidebar main-content main-content right-sidebar'
+            'footer footer footer footer';
+    }
+}
+
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+<div class="holy-grail-grid">
+  <header class="header">
+    <a href="https://www.allegroflare.org"/><img id="primary_logo" src="https://cdn.shopify.com/s/files/1/0557/4495/4531/files/allegro-flare-logo-white-01.png?v=1691080699" alt="AllegroFlare" /></a><p><span id="logo_text">AllegroFlare</span><br><span id="logo_subtext"><em>High level objects for Allegro game programming</em></span></p>
+    <div id="main_nav">
+      <ul>
+        <li><a href="https://www.allegroflare.org/docs">Components</a></li>
+        <li><a href="https://github.com/allegroflare/allegro_flare">GitHub</a></li>
+      </ul>
+    </div>
+  </header>
+<main class="main-content">
+
+<h1>Index of AllegroFlare Components</h1><h2>Components</h2>
+<div id="components_index_list">
+<ul>
+  <li><a href="/docs/ASCIICharacterRenderer">ASCIICharacterRenderer</a></li>
+  <li><a href="/docs/Blast/BinaryObfusicator">Blast/BinaryObfusicator</a></li>
+  <li><a href="/docs/Blast/Build/Celebrator">Blast/Build/Celebrator</a></li>
+  <li><a href="/docs/Blast/BuildInfo">Blast/BuildInfo</a></li>
+  <li><a href="/docs/Blast/BuildInfoBuilder">Blast/BuildInfoBuilder</a></li>
+  <li><a href="/docs/Blast/BuildInfoCppFileGenerator">Blast/BuildInfoCppFileGenerator</a></li>
+  <li><a href="/docs/Blast/BuildSystem/BuildFactory">Blast/BuildSystem/BuildFactory</a></li>
+  <li><a href="/docs/Blast/BuildSystem/BuildStageFactory">Blast/BuildSystem/BuildStageFactory</a></li>
+  <li><a href="/docs/Blast/BuildSystem/BuildStageRenderer">Blast/BuildSystem/BuildStageRenderer</a></li>
+  <li><a href="/docs/Blast/BuildSystem/BuildStageRenderers/Base">Blast/BuildSystem/BuildStageRenderers/Base</a></li>
+  <li><a href="/docs/Blast/BuildSystem/BuildStageRenderers/ShellCommand">Blast/BuildSystem/BuildStageRenderers/ShellCommand</a></li>
+  <li><a href="/docs/Blast/BuildSystem/BuildStages/Base">Blast/BuildSystem/BuildStages/Base</a></li>
+  <li><a href="/docs/Blast/BuildSystem/BuildStages/ShellCommand">Blast/BuildSystem/BuildStages/ShellCommand</a></li>
+  <li><a href="/docs/Blast/BuildSystem/Builds/Base">Blast/BuildSystem/Builds/Base</a></li>
+  <li><a href="/docs/Blast/BuildSystem/ReportRenderer">Blast/BuildSystem/ReportRenderer</a></li>
+  <li><a href="/docs/Blast/BuildSystem/ReportRenderers/Base">Blast/BuildSystem/ReportRenderers/Base</a></li>
+  <li><a href="/docs/Blast/CamelCaseToConstantConverter">Blast/CamelCaseToConstantConverter</a></li>
+  <li><a href="/docs/Blast/CamelCaseToUnderscoreConverter">Blast/CamelCaseToUnderscoreConverter</a></li>
+  <li><a href="/docs/Blast/Cpp/EnumClass">Blast/Cpp/EnumClass</a></li>
+  <li><a href="/docs/Blast/Cpp/EnumClassFormatter">Blast/Cpp/EnumClassFormatter</a></li>
+  <li><a href="/docs/Blast/Cpp/Function">Blast/Cpp/Function</a></li>
+  <li><a href="/docs/Blast/Cpp/FunctionBody">Blast/Cpp/FunctionBody</a></li>
+  <li><a href="/docs/Blast/DependencyHeadersSuggester">Blast/DependencyHeadersSuggester</a></li>
+  <li><a href="/docs/Blast/DependencySymbolAtomizer">Blast/DependencySymbolAtomizer</a></li>
+  <li><a href="/docs/Blast/DirectoryCreator">Blast/DirectoryCreator</a></li>
+  <li><a href="/docs/Blast/DirectoryExistenceChecker">Blast/DirectoryExistenceChecker</a></li>
+  <li><a href="/docs/Blast/Errors">Blast/Errors</a></li>
+  <li><a href="/docs/Blast/FileCreator">Blast/FileCreator</a></li>
+  <li><a href="/docs/Blast/FileExistenceChecker">Blast/FileExistenceChecker</a></li>
+  <li><a href="/docs/Blast/FileLastWriteTime">Blast/FileLastWriteTime</a></li>
+  <li><a href="/docs/Blast/Inflector">Blast/Inflector</a></li>
+  <li><a href="/docs/Blast/Project/ActionCreator">Blast/Project/ActionCreator</a></li>
+  <li><a href="/docs/Blast/Project/Component">Blast/Project/Component</a></li>
+  <li><a href="/docs/Blast/Project/ComponentBasenameExtractor">Blast/Project/ComponentBasenameExtractor</a></li>
+  <li><a href="/docs/Blast/Project/ComponentCreator">Blast/Project/ComponentCreator</a></li>
+  <li><a href="/docs/Blast/Project/ComponentDependencyLister">Blast/Project/ComponentDependencyLister</a></li>
+  <li><a href="/docs/Blast/Project/ComponentLister">Blast/Project/ComponentLister</a></li>
+  <li><a href="/docs/Blast/Project/ComponentRelativeLister">Blast/Project/ComponentRelativeLister</a></li>
+  <li><a href="/docs/Blast/Project/ProgramLister">Blast/Project/ProgramLister</a></li>
+  <li><a href="/docs/Blast/Project/ProjectSymlinkFixer">Blast/Project/ProjectSymlinkFixer</a></li>
+  <li><a href="/docs/Blast/Project/SourceReleaseBuilder">Blast/Project/SourceReleaseBuilder</a></li>
+  <li><a href="/docs/Blast/Project/SymlinkChecker">Blast/Project/SymlinkChecker</a></li>
+  <li><a href="/docs/Blast/Quintessence/YAMLParsers/EnumClassParser">Blast/Quintessence/YAMLParsers/EnumClassParser</a></li>
+  <li><a href="/docs/Blast/Quintessence/YAMLParsers/FunctionArgumentParser">Blast/Quintessence/YAMLParsers/FunctionArgumentParser</a></li>
+  <li><a href="/docs/Blast/RegexMatcher">Blast/RegexMatcher</a></li>
+  <li><a href="/docs/Blast/ReleaseInfo">Blast/ReleaseInfo</a></li>
+  <li><a href="/docs/Blast/ReleaseInfoBuilder">Blast/ReleaseInfoBuilder</a></li>
+  <li><a href="/docs/Blast/ReleaseInfoCppFileGenerator">Blast/ReleaseInfoCppFileGenerator</a></li>
+  <li><a href="/docs/Blast/ShellCommandExecutorWithCallback">Blast/ShellCommandExecutorWithCallback</a></li>
+  <li><a href="/docs/Blast/SimpleTextSearcher">Blast/SimpleTextSearcher</a></li>
+  <li><a href="/docs/Blast/String/Trimmer">Blast/String/Trimmer</a></li>
+  <li><a href="/docs/Blast/StringSplitter">Blast/StringSplitter</a></li>
+  <li><a href="/docs/Blast/StringUpcaser">Blast/StringUpcaser</a></li>
+  <li><a href="/docs/Blast/SystemInfo">Blast/SystemInfo</a></li>
+  <li><a href="/docs/Blast/TaoTeChingQuoteGenerator">Blast/TaoTeChingQuoteGenerator</a></li>
+  <li><a href="/docs/Blast/TemplatedFile">Blast/TemplatedFile</a></li>
+  <li><a href="/docs/Blast/Testing/TemporaryDirectoryCreator">Blast/Testing/TemporaryDirectoryCreator</a></li>
+  <li><a href="/docs/Blast/TimeStamper">Blast/TimeStamper</a></li>
+  <li><a href="/docs/Blast/VersionYAMLLoaderEmitter">Blast/VersionYAMLLoaderEmitter</a></li>
+  <li><a href="/docs/Blast/YAMLValidator">Blast/YAMLValidator</a></li>
+  <li><a href="/docs/Checkbox">Checkbox</a></li>
+  <li><a href="/docs/EpicDarkFont">EpicDarkFont</a></li>
+  <li><a href="/docs/HostnameExtractor">HostnameExtractor</a></li>
+  <li><a href="/docs/NcursesArt/GithubRepoStatusFetcher">NcursesArt/GithubRepoStatusFetcher</a></li>
+  <li><a href="/docs/NcursesArt/Rails/ComponentFilenameGenerator">NcursesArt/Rails/ComponentFilenameGenerator</a></li>
+  <li><a href="/docs/OrigamiMommyFontLoader">OrigamiMommyFontLoader</a></li>
+  <li><a href="/docs/ProjectComponentBasenameExtractor">ProjectComponentBasenameExtractor</a></li>
+  <li><a href="/docs/ProjectFilenameGenerator">ProjectFilenameGenerator</a></li>
+  <li><a href="/docs/ProjectListBuilder">ProjectListBuilder</a></li>
+  <li><a href="/docs/Question">Question</a></li>
+  <li><a href="/docs/Quiz">Quiz</a></li>
+  <li><a href="/docs/QuizYAMLLoader">QuizYAMLLoader</a></li>
+  <li><a href="/docs/Quizes/MultiplexQuestion">Quizes/MultiplexQuestion</a></li>
+  <li><a href="/docs/Quizes/MultiplexQuestionCollectionHelper">Quizes/MultiplexQuestionCollectionHelper</a></li>
+  <li><a href="/docs/Quizes/MultiplexQuizRunner">Quizes/MultiplexQuizRunner</a></li>
+  <li><a href="/docs/Quizes/MultiplexSheetLoader">Quizes/MultiplexSheetLoader</a></li>
+  <li><a href="/docs/SmallFontLoader">SmallFontLoader</a></li>
+  <li><a href="/docs/StringSplitter">StringSplitter</a></li>
+  <li><a href="/docs/StringVectorIntersection">StringVectorIntersection</a></li>
+  <li><a href="/docs/VortexFontLoader">VortexFontLoader</a></li>
+  <li><a href="/docs/ncurses_art/Backends/Base">ncurses_art/Backends/Base</a></li>
+  <li><a href="/docs/ncurses_art/Backends/Ncurses">ncurses_art/Backends/Ncurses</a></li>
+</ul>
+</div>
+
+
+    <h2>Sponsor</h2>
+<p>Visit CLUBCATT for <a href="https://clubcatt.com">cat shirts, cat mugs, cat puzzles, and more</a>.</p>
+
+</main>
+    <section class="left-sidebar"></section>
+    <aside class="right-sidebar"></aside>
+    <footer class="footer">
+
+AllegroFlare - Visit us on <a href="https://github.com/allegroflare/allegro_flare">GitHub</a>
+
+    </footer>
+</div>
+</body>
