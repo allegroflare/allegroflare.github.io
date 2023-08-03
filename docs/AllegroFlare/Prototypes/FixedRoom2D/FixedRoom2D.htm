@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<head>
+<title>AllegroFlare/Prototypes/FixedRoom2D/FixedRoom2D • AllegroFlare Game Programming Docs</title>
+<style>
+*
+{
+  font-family: 'Arial';
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+#primary_logo
+{
+  width: 80px;
+  float: left;
+}
+#logo_text
+{
+  padding-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+#main_nav ul
+{
+  list-style: none;
+}
+#main_nav ul li
+{
+  display: inline-block;
+  padding: 10px;
+}
+#main_nav ul li a
+{
+  color: white;
+}
+html
+{
+}
+h1, h2, h3, h4, h5, p
+{
+  margin-bottom: 20px;
+}
+table td
+{
+  padding: 3px 20px;
+}
+.property
+{
+  color: blue;
+}
+.private_property
+{
+  color: lightblue;
+}
+.method
+{
+  color: red;
+}
+.private_method
+{
+  color: pink;
+}
+.dependency
+{
+  color: green;
+}
+
+.component div.property-box
+{
+  padding: 20px 10px 20px 10px;
+  margin: 20px 10px 20px 10px;
+  border-radius: 8px;
+}
+
+.component .properties
+{
+  background-color: #dfcfdf;
+}
+
+.component .methods
+{
+  background-color: #cfdfdf;
+}
+
+.component .dependencies
+{
+  background-color: #dfdfcf;
+}
+
+
+
+.header
+{
+  background: rgb(204,28,28);
+  background: -moz-linear-gradient(175deg, rgba(204,28,28,1) 0%, rgba(176,28,105,1) 100%);
+  background: -webkit-linear-gradient(175deg, rgba(204,28,28,1) 0%, rgba(176,28,105,1) 100%);
+  background: linear-gradient(175deg, rgba(204,28,28,1) 0%, rgba(176,28,105,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cc1c1c",endColorstr="#b01c69",GradientType=1);
+
+  color: white;
+}
+.footer
+{
+background: rgb(0,0,0);
+background: -moz-linear-gradient(172deg, rgba(0,0,0,1) 0%, rgba(122,20,97,1) 100%);
+background: -webkit-linear-gradient(172deg, rgba(0,0,0,1) 0%, rgba(122,20,97,1) 100%);
+background: linear-gradient(172deg, rgba(0,0,0,1) 0%, rgba(122,20,97,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#7a1461",GradientType=1);
+
+  height: 200px;
+  color: white;
+  font-weight: bold;
+}
+.footer a
+{
+  color: white;
+}
+
+
+
+
+
+
+/* grid container */
+.holy-grail-grid {
+    display:grid;
+    grid-template-areas:
+        'header'
+        'main-content'
+        'left-sidebar'
+        'right-sidebar'
+        'footer';
+}
+
+/* general column padding */
+.holy-grail-grid > * {
+    padding:1rem;
+}
+
+/* assign columns to grid areas */
+.holy-grail-grid > .header {
+    grid-area:header;
+}
+.holy-grail-grid > .main-content {
+    grid-area:main-content;
+}
+.holy-grail-grid > .left-sidebar {
+    grid-area:left-sidebar;
+}
+.holy-grail-grid > .right-sidebar {
+    grid-area:right-sidebar;
+}
+.holy-grail-grid > .footer {
+    grid-area:footer;
+}
+
+/* tablet breakpoint */
+@media (min-width:768px) {
+    .holy-grail-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            'header header'
+            'main-content main-content'
+            'left-sidebar right-sidebar'
+            'footer footer';
+    }
+}
+
+/* desktop breakpoint */
+@media (min-width:1024px) {
+    .holy-grail-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            'header header header header'
+            'left-sidebar main-content main-content right-sidebar'
+            'footer footer footer footer';
+    }
+}
+
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+<div class="holy-grail-grid">
+  <header class="header">
+    <a href="https://www.allegroflare.org"/><img id="primary_logo" src="https://cdn.shopify.com/s/files/1/0557/4495/4531/files/allegro-flare-logo-white-01.png?v=1691080699" alt="AllegroFlare" /></a><p><span id="logo_text">AllegroFlare</span><br><span id="logo_subtext"><em>High level objects for Allegro game programming</em></span></p>
+    <div id="main_nav">
+      <ul>
+        <li><a href="https://www.allegroflare.org/docs">Components</a></li>
+        <li><a href="https://github.com/allegroflare/allegro_flare">GitHub</a></li>
+      </ul>
+    </div>
+  </header>
+<main class="main-content">
+
+<h1>AllegroFlare/Prototypes/FixedRoom2D/FixedRoom2D</h1><ul>
+  <div class="component">
+    <h3>Properties</h3>
+<div class="property-box properties">     <table>
+<tr>
+  <td class="property">bitmap_bin</td>
+  <td class="property">AllegroFlare::BitmapBin*</td>
+</tr>
+<tr>
+  <td class="property">font_bin</td>
+  <td class="property">AllegroFlare::FontBin*</td>
+</tr>
+<tr>
+  <td class="property">event_emitter</td>
+  <td class="property">AllegroFlare::EventEmitter*</td>
+</tr>
+<tr>
+  <td class="property">inventory_index</td>
+  <td class="property">AllegroFlare::InventoryIndex</td>
+</tr>
+<tr>
+  <td class="property">af_inventory</td>
+  <td class="property">AllegroFlare::Inventory</td>
+</tr>
+<tr>
+  <td class="property">flags</td>
+  <td class="property">AllegroFlare::Inventory</td>
+</tr>
+<tr>
+  <td class="property">entity_dictionary</td>
+  <td class="property">std::map&lt;std::string, AllegroFlare::Prototypes::FixedRoom2D::Entities::Base*&gt;</td>
+</tr>
+<tr>
+  <td class="property">room_dictionary</td>
+  <td class="property">std::map&lt;std::string, AllegroFlare::Prototypes::FixedRoom2D::Room*&gt;</td>
+</tr>
+<tr>
+  <td class="property">entity_room_associations</td>
+  <td class="property">std::map&lt;std::string, std::string&gt;</td>
+</tr>
+<tr>
+  <td class="property">script_dictionary</td>
+  <td class="property">std::map&lt;std::string, AllegroFlare::Prototypes::FixedRoom2D::Script&gt;</td>
+</tr>
+<tr>
+  <td class="property">script_runner</td>
+  <td class="property">AllegroFlare::Prototypes::FixedRoom2D::ScriptRunner</td>
+</tr>
+<tr>
+  <td class="property">entity_collection_helper</td>
+  <td class="property">AllegroFlare::Prototypes::FixedRoom2D::EntityCollectionHelper</td>
+</tr>
+<tr>
+  <td class="property">starting_room_identifier</td>
+  <td class="property">std::string</td>
+</tr>
+<tr>
+  <td class="property">current_room</td>
+  <td class="property">AllegroFlare::Prototypes::FixedRoom2D::Room*</td>
+</tr>
+<tr>
+  <td class="property">room_shader</td>
+  <td class="property">AllegroFlare::Shaders::Base*</td>
+</tr>
+<tr>
+  <td class="property">initialized</td>
+  <td class="property">bool</td>
+</tr>
+<tr>
+  <td class="property">dialog_system</td>
+  <td class="property">AllegroFlare::Prototypes::FixedRoom2D::DialogSystem</td>
+</tr>
+<tr>
+  <td class="property">paused</td>
+  <td class="property">bool</td>
+</tr>
+<tr>
+  <td class="property">subscribed_to_game_event_names</td>
+  <td class="property">std::set&lt;std::string&gt;</td>
+</tr>
+<tr>
+  <td class="property">standard_dialog_box_font_name</td>
+  <td class="property">std::string</td>
+</tr>
+<tr>
+  <td class="property">standard_dialog_box_font_size</td>
+  <td class="property">int</td>
+</tr>
+<tr>
+  <td class="property">DEFAULT_STANDARD_DIALOG_BOX_FONT_NAME</td>
+  <td class="property">char*</td>
+</tr>
+<tr>
+  <td class="property">DEFAULT_STANDARD_DIALOG_BOX_FONT_SIZE</td>
+  <td class="property">int</td>
+</tr>
+    </table>
+</div>    <h3>Methods</h3>
+<div class="property-box methods">     <table>
+<tr>
+  <td class="method">set_font_bin(AllegroFlare::FontBin* font_bin=nullptr)</td>
+</tr>
+<tr>
+  <td class="method">get_subscribed_to_game_event_names()</td>
+</tr>
+<tr>
+  <td class="method">is_subscribed_to_game_event_name(std::string game_event_name=&quot;[unset-game_event_name]&quot;)</td>
+</tr>
+<tr>
+  <td class="method">initialize()</td>
+</tr>
+<tr>
+  <td class="method">load_configuration(AllegroFlare::Prototypes::FixedRoom2D::Configuration configuration={})</td>
+</tr>
+<tr>
+  <td class="method">enter_start_room()</td>
+</tr>
+<tr>
+  <td class="method">load_gametest_configuration()</td>
+</tr>
+<tr>
+  <td class="method">update()</td>
+</tr>
+<tr>
+  <td class="method">enter_room(std::string room_name=&quot;[unset-room_name]&quot;)</td>
+</tr>
+<tr>
+  <td class="method">unhover_any_and_all_entities()</td>
+</tr>
+<tr>
+  <td class="method">reset_cursors_to_default_in_all_rooms()</td>
+</tr>
+<tr>
+  <td class="method">get_current_room_dictionary_name(AllegroFlare::Prototypes::FixedRoom2D::Room* room=nullptr)</td>
+</tr>
+<tr>
+  <td class="method">render()</td>
+</tr>
+<tr>
+  <td class="method">render_void_room()</td>
+</tr>
+<tr>
+  <td class="method">process_subscribed_to_game_event(AllegroFlare::GameEvent* game_event=nullptr)</td>
+</tr>
+<tr>
+  <td class="private_method">process_interaction_event(AllegroFlare::GameEventDatas::Base* game_event_data=nullptr)</td>
+</tr>
+<tr>
+  <td class="private_method">process_script_event(AllegroFlare::GameEventDatas::Base* game_event_data=nullptr)</td>
+</tr>
+<tr>
+  <td class="method">render_entities_in_current_room()</td>
+</tr>
+<tr>
+  <td class="method">get_entities_in_current_room()</td>
+</tr>
+<tr>
+  <td class="method">get_dictionary_name_of_current_room()</td>
+</tr>
+<tr>
+  <td class="method">update_all_rooms()</td>
+</tr>
+<tr>
+  <td class="method">suspend_all_rooms()</td>
+</tr>
+<tr>
+  <td class="method">resume_all_rooms()</td>
+</tr>
+<tr>
+  <td class="method">pause_game()</td>
+</tr>
+<tr>
+  <td class="method">unpause_game()</td>
+</tr>
+<tr>
+  <td class="method">dialog_cursor_up()</td>
+</tr>
+<tr>
+  <td class="method">dialog_cursor_down()</td>
+</tr>
+<tr>
+  <td class="method">dialog_is_finished()</td>
+</tr>
+<tr>
+  <td class="method">activate_primary_action()</td>
+</tr>
+<tr>
+  <td class="method">emit_close_current_active_dialog_event()</td>
+</tr>
+<tr>
+  <td class="method">move_cursor_up()</td>
+</tr>
+<tr>
+  <td class="method">move_cursor_down()</td>
+</tr>
+<tr>
+  <td class="method">move_cursor_left()</td>
+</tr>
+<tr>
+  <td class="method">move_cursor_right()</td>
+</tr>
+<tr>
+  <td class="method">move_cursor(float distance_x=0.0, float distance_y=0.0)</td>
+</tr>
+    </table>
+</div>    <h3>Dependencies</h3>
+<div class="property-box dependencies">     <table>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::Cursor&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/Cursor.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::EntityFactory&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/EntityFactory.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::EntityCollectionHelper&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/EntityCollectionHelper.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::ScriptRunner&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/ScriptRunner.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::InteractionEventData&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/InteractionEventData.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Elements::Inventory&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Elements/Inventory.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Elements::DialogBoxRenderer&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Elements/DialogBoxRenderer.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Elements::DialogBoxFactory&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Elements/DialogBoxFactory.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::ScriptEventDatas::InitiateDialog&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/ScriptEventDatas/InitiateDialog.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::ScriptEventDatas::CollectItem&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/ScriptEventDatas/CollectItem.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::ScriptEventDatas::EnterRoom&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/ScriptEventDatas/EnterRoom.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::RoomFactory&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/RoomFactory.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Inventory&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Inventory.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::InventoryIndex&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/InventoryIndex.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::ConfigurationLoader&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/ConfigurationLoader.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::ConfigurationFactory&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/ConfigurationFactory.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::Configuration&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/Configuration.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::BitmapBin&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/BitmapBin.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::FontBin&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/FontBin.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::EventEmitter&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/EventEmitter.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::AudioController&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/AudioController.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::GameEvent&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/GameEvent.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::Room&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/Room.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::GameEventDatas::Base&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/GameEventDatas/Base.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Elements::DialogBoxes::Base&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Elements/DialogBoxes/Base.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Shaders::Base&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Shaders/Base.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::Entities::Base&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/Entities/Base.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::Script&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/Script.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Color::&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Color.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::EventNames::&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/EventNames.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::DialogEventDatas::CloseDialog&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/DialogEventDatas/CloseDialog.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::InventoryDictionaryItems::WithAttributes&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/InventoryDictionaryItems/WithAttributes.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Prototypes::FixedRoom2D::DialogSystem&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Prototypes/FixedRoom2D/DialogSystem.hpp&quot;]}</td>
+</tr>
+    </table>
+</div>  </div>
+</ul>
+
+
+    <h3>Sponsor</h3>
+<p>Visit CLUBCATT for <a href="https://clubcatt.com">cat shirts, cat mugs, cat puzzles, and more</a>.</p>
+
+</main>
+    <section class="left-sidebar"></section>
+    <aside class="right-sidebar"></aside>
+    <footer class="footer">
+
+AllegroFlare - Visit us on <a href="https://github.com/allegroflare/allegro_flare">GitHub</a>
+
+    </footer>
+</div>
+</body>
